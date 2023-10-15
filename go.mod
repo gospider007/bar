@@ -1,8 +1,8 @@
-module gitee.com/baixudong/bar
+module github.com/gospider007/bar
 
 go 1.21.0
 
-require gitee.com/baixudong/blog v0.0.0-20230726070237-ee8a30e182ac
+require github.com/gospider007/blog v0.0.0-20231015040505-4b08187c11ee
 
 require (
 	go.uber.org/multierr v1.11.0 // indirect
