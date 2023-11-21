@@ -122,12 +122,12 @@ func (obj *Client) Print(curs ...int64) {
 	}
 	se := time2Dhms(int64(math.Ceil(float64(obj.total-obj.cur) / mt))) //剩余时间
 	fmt.Println(
-		blog.Color(5, 0, time.Now().Format(time.DateTime)),
-		blog.Color(2, 0, fmt.Sprintf(" %-50s", obj.rate.String())),
-		blog.Color(4, 0, fmt.Sprintf(" %3d%%", obj.percent)),
-		blog.Color(3, 0, fmt.Sprintf(" %d/%d", obj.cur, obj.total)),
-		blog.Color(6, 0, fmt.Sprintf(" %s<%s", sn, se)),
-		blog.Color(1, 0, fmt.Sprintf(" %0.2f/s", mt)),
+		blog.Color(5, time.Now().Format(time.DateTime)),
+		blog.Color(2, fmt.Sprintf(" %-50s", obj.rate.String())),
+		blog.Color(4, fmt.Sprintf(" %3d%%", obj.percent)),
+		blog.Color(3, fmt.Sprintf(" %d/%d", obj.cur, obj.total)),
+		blog.Color(6, fmt.Sprintf(" %s<%s", sn, se)),
+		blog.Color(1, fmt.Sprintf(" %0.2f/s", mt)),
 	)
 	if nowMt.time-obj.preMt2.time > 300 {
 		obj.preMt, obj.preMt2 = obj.preMt2, nowMt

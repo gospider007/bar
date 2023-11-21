@@ -2,7 +2,7 @@ module github.com/gospider007/bar
 
 go 1.21.3
 
-require github.com/gospider007/blog v0.0.0-20231015040505-4b08187c11ee
+require github.com/gospider007/blog v0.0.0-20231121084103-59a004dafccf
 
 require (
 	go.uber.org/multierr v1.11.0 // indirect
