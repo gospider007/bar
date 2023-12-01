@@ -91,16 +91,26 @@ type barMt struct {
 	cur  int64
 }
 
-// 打印进度条
-func (obj *Client) Print(curs ...int64) {
+// 进度条增加
+func (obj *Client) Add(vals ...int64) {
 	obj.lock.Lock()
 	defer obj.lock.Unlock()
-
-	if len(curs) == 0 {
+	if len(vals) == 0 {
 		obj.cur++
 	} else {
-		obj.cur += curs[0]
+		obj.cur += vals[0]
 	}
+	obj.print()
+}
+func (obj *Client) Print(cur int64) {
+	obj.lock.Lock()
+	defer obj.lock.Unlock()
+	obj.cur = cur
+	obj.print()
+}
+
+// 打印进度条
+func (obj *Client) print() {
 	nowMt := barMt{
 		time: time.Now().Unix(),
 		cur:  obj.cur,
