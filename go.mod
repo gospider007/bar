@@ -1,6 +1,6 @@
 module github.com/gospider007/bar
 
-go 1.24.0
+go 1.25
 
 require github.com/gospider007/blog v0.0.0-20231121084103-59a004dafccf
 
